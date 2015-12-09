@@ -16,10 +16,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     NSTimeInterval  timeZoneOffset=[[NSTimeZone systemTimeZone] secondsFromGMT];
     NSDate* date =[[NSDate date] dateByAddingTimeInterval:timeZoneOffset];
     NSInteger time =[date timeIntervalSince1970];
 //    NSInteger currentTime=time-8*60*60;
+    // 获取零点
     time = time- time%(3600*24)- (3600*24);
 //    时间戳转时间的方法
     NSDate *confromTimesp = [NSDate dateWithTimeIntervalSince1970:time];
